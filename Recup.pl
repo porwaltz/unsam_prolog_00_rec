@@ -98,6 +98,12 @@ gustoEnComun(Vivienda):-
     viveEn(Persona, Vivienda),
     leGusta(Persona, Algo),
     forall(viveEn(Persona1, Vivienda), (leGusta(Persona1, Algo))).
+
+/* gustoEnComun(Vivienda):-
+    viveEn(Persona, Vivienda),
+    leGusta(Persona, Algo),
+    forall(viveEn(Persona1, Vivienda), (leGusta(Persona1, Algo), Persona \= Persona1)). */
+
 % c)
 esGrande(Width, Height, Tunnels):-
     Width * Height + (10 * Tunnels) > 50.
