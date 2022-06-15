@@ -1,0 +1,44 @@
+1 ?- esPosibleDesidente(X).
+X = p912ec803b2ce49e4a541068d495ab570 ;
+X = p7024c1db9ae6e2670f8600bb0aeadd5a ;
+X = p1f5364c58947e14f9afa445bdf1ba4d9 ;
+X = p2e416649e6ca0a1cbf9a1210cf4ce234 ;
+X = p42fc1cd45335ad42d603657e5d0f2682 ;
+X = p1f5364c58947e14f9afa445bdf1ba4d9 ;
+X = pf55840c38474c1909ce742172a77a013 ;
+X = p7024c1db9ae6e2670f8600bb0aeadd5a ;
+X = p8d5ede17b2c2b48de3da2c1e7c3807ec ;
+
+2 ?- esPosibleDesidente(p912ec803b2ce49e4a541068d495ab570).
+true 
+
+4 ?- noViveNadie(X).
+X = la_torre_inclinada ;
+false.
+
+4 ?- noViveNadie(la_severino).
+false.
+
+5 ?- potencialRebelde(X).   
+X = la_severino ;
+X = la_severino ;
+X = la_severino ;
+X = la_severino ;
+X = lo_de_cucho ;
+X = madison_circle_garden ;
+false.
+
+
+6 ?- potencialRebelde(comisaria_48). 
+false.
+
+1 ?- gustoEnComun(X).               
+X = comisaria_48 ;
+X = comisaria_48 ;
+X = comisaria_48 ;
+X = palacio_gigante ;
+X = madison_circle_garden ;
+X = madison_circle_garden.
+
+2 ?- gustoEnComun(lo_de_cucho).  
+false.

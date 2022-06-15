@@ -94,15 +94,15 @@ noViveNadie(Vivienda):-
     casa(Vivienda, _, _, _),
     not(viveEn(_, Vivienda)).
 
-gustoEnComun(Vivienda):-
-    viveEn(Persona, Vivienda),
-    leGusta(Persona, Algo),
-    forall(viveEn(Persona1, Vivienda), (leGusta(Persona1, Algo))).
-
 /* gustoEnComun(Vivienda):-
     viveEn(Persona, Vivienda),
     leGusta(Persona, Algo),
-    forall(viveEn(Persona1, Vivienda), (leGusta(Persona1, Algo), Persona \= Persona1)). */
+    forall(viveEn(Persona1, Vivienda), (leGusta(Persona1, Algo))). */
+
+gustoEnComun(Vivienda):-
+    viveEn(Persona, Vivienda),
+    leGusta(Persona, Algo),
+    forall((viveEn(Persona1, Vivienda), Persona \= Persona1), (leGusta(Persona1, Algo))).
 
 % c)
 esGrande(Width, Height, Tunnels):-
@@ -113,3 +113,7 @@ potencialRebelde(Vivienda):-
     esPosibleDesidente(Sospechoso),
     casa(Vivienda, W, H, Tuneles),
     esGrande(W, H, Tuneles).
+
+
+
+% 4) esGrande no es inversible mientras que potencialRebelde si lo es porque los parametros de esGrande no forman parte de otros hachos y no pueden deducirse
